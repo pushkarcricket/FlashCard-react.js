@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.navbar{
+    display: flex;
+    background-color: chocolate;
+    justify-content: space-between;
+    align-items: center;
+    
+    list-style: none;
+    text-decoration: none; 
+
+}
+.link>ul>li{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+}
