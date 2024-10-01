@@ -2,6 +2,7 @@
 
 import './App.css'
 import Component from './Component'
+import List from './List'
 
 
 function App() {
@@ -9,7 +10,9 @@ function App() {
 
   return (
     <>
-    <Component/>
+    {/* <Component/> */}
+
+    <List/>
       
    
      
