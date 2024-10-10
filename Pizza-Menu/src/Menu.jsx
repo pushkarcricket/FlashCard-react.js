@@ -3,61 +3,94 @@ import Pizza from './Pizza'
 
 export default function Menu() {
 
-  const pizzaData=[
-    {name:'pizza 1' ,
-        ingredient:"tomato, mozilla, cheese, spanich",
-        photoName:"public/images/pizza1.jpg",
-        price:"10" },
-        {
-          name:'pizza 2', ingredient:'tomato, patato,cheese, ', price:"20",
+  const pizzaData = [
+    {
+      name: "Focaccia",
+      ingredients: "Bread with italian olive oil and rosemary",
+      price: 6,
+      photoName: "pizzas/focaccia.jpg",
+      soldOut: false,
+    },
+    {
+      name: "Pizza Margherita",
+      ingredients: "Tomato and mozarella",
+      price: 10,
+      photoName: "pizzas/margherita.jpg",
+      soldOut: false,
+    },
+    {
+      name: "Pizza Spinaci",
+      ingredients: "Tomato, mozarella, spinach, and ricotta cheese",
+      price: 12,
+      photoName: "pizzas/spinaci.jpg",
+      soldOut: false,
+    },
+    {
+      name: "Pizza Funghi",
+      ingredients: "Tomato, mozarella, mushrooms, and onion",
+      price: 12,
+      photoName: "pizzas/funghi.jpg",
+      soldOut: false,
+    },
+    {
+      name: "Pizza Salamino",
+      ingredients: "Tomato, mozarella, and pepperoni",
+      price: 15,
+      photoName: "pizzas/salamino.jpg",
+      soldOut: true,
+    },
+    {
+      name: "Pizza Prosciutto",
+      ingredients: "Tomato, mozarella, ham, aragula, and burrata cheese",
+      price: 18,
+      photoName: "pizzas/prosciutto.jpg",
+      soldOut: false,
+    },
+  ];
+  const pizzas=pizzaData;
+  const numPizzas = pizzas.length;
 
-        photoName:"public/images/pizza2.jpg"
+
+ 
         
-
-        },
-        {
-          name:'pizza 3', ingredient:'tomato, paneer,cheese, ', price:"20",
-
-photoName:"public/images/pizza3.jpg"
-        },
-        {
-          name:'pizza 4', ingredient:'tomato, paneer,cheese, ', price:"20",
-
-photoName:"public/images/pizza4.jpg"
-
-
-        },
-        {
-          name:'pizza 5', ingredient:'tomato, marshmellow,cheese, capsikam ', price:"20",
-
-          photoName:"public/images/pizza5.jpg"
-          
-        },
-        {
-           name:'pizza 6', ingredient:'tomato, marshmellow,cheese, capsikam ', price:"20",
-
-photoName:"public/images/pizza6.jpg"
-        },
     
-  ]
+  
   return (
+
     
-    
-        <main className='menu'>
-        <h2> Our Menu</h2>
+<main className="menu">
+      <h2>Our menu</h2>
+
+      {numPizzas > 0 ? (
         <>
+          <p>
+            Authentic Italian cuisine. 6 creative dishes to choose from. All
+            from our stone oven, all organic, all delicious.
+          </p>
 
-        <p>
-          Authentic Italian cuisine. 6 creative dishes to choose from. All from our stone oven, all organic, all delicious.
-        </p>
-
-        <ul className="pizzas"> 
-          {pizzaData.map((pizza,index)=>(<Pizza key={index} pizzaObj={pizza}/>))}
-
+          <ul className="pizzas">
+            {pizzas.map((pizza) => (
+              <Pizza pizzaObj={pizza} key={pizza.name} />
+            ))}
           </ul>
-          </>
+        </>
+      ) : (
+        <p> We're still working on our menu. Please come back later </p>
+      )}
 
-          </main>
+      {/* <Pizza
+        name="Pizza Spinaci"
+        ingredients="Tomato, mozarella, spinach, and ricotta cheese"
+        photoName="pizzas/spinaci.jpg"
+        price={10}
+      />
+      <Pizza
+        name="Pizza Funghi"
+        ingredients="Tomato, mushrooms"
+        price={12}
+        photoName="pizzas/funghi.jpg"
+      /> */}
+    </main>
           
         
     

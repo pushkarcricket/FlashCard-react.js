@@ -1,16 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
+import Input from './Input'
+import List from './List'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <>
+    <div className="p-3 mb-2 bg-info text-dark bg-info">
 
-     <h1>  hello world</h1>
+     <h1>TODO App using redux</h1>
+     <Input/>
+     <List/>
+
+
+
+
       
+      </div>
     </>
   )
 }
